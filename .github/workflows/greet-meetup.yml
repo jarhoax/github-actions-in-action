@@ -7,4 +7,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: echo "Hey folks, it's a please to be here!"
+      - run: echo "Hey folks, it's a pleasure to be here!"
