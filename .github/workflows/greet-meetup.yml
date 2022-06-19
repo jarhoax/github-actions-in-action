@@ -1,0 +1,10 @@
+name: greet-meetup
+
+on: [workflow_dispatch]
+
+jobs:
+  greet-meetup-folks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: echo "Hey folks, it's a please to be here!"
