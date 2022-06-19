@@ -1,0 +1,14 @@
+name: github-actions-demo
+
+on: [workflow_dispatch]
+
+jobs:
+  check-java-version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-java@v3
+        with:
+          distribution: 'zulu'
+          java-version: '11'
+      - run: java -v
