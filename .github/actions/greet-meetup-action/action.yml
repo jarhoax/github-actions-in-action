@@ -1,0 +1,13 @@
+name: 'Greet Meetup folks'
+description: 'Greets the awesome people at this meetup'
+
+inputs:
+  guests:
+    description: 'The number of guests to greet'
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - run: echo "Hey folks, great to see ${{ inputs.guests }} people joining our fun!"
+      shell: bash
