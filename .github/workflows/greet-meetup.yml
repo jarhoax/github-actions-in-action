@@ -6,12 +6,16 @@ jobs:
   greet-meetup-folks:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout-repo
+      - name: Checkout repo
         uses: actions/checkout@v3
-      - name: read-guests
+        
+      - name: Reading number of guests
         id: guests
         uses: juliangruber/read-file-action@v1
         with:
-            path: ./guests.txt
-      - name: greet-folks
-        run: echo "Hey folks, great to see ${{ steps.guests.outputs.content }} people joining our fun!"
+          path: ./guests.txt
+          
+      - name: Greet the folks
+        uses: ./.github/actions/greet-meetup-action
+        with:
+          guests: ${{ steps.guests.outputs.content }}
